@@ -17,10 +17,9 @@ import re
 #-----------------------------------------------------------------------------
 # Third Party Imports
 sys.path.append(os.path.join(os.path.dirname( __file__ ), '..'))
+import matplotlib.pyplot as plt
+import numpy as np
 from scipy import interpolate
-import seaborn as sns
-import scipy.optimize
-import scipy.stats
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
 from scipy.interpolate import make_smoothing_spline
@@ -200,8 +199,17 @@ def interpolate_data(x_data,y_data,new_x_data,method="lowess",**options):
 
 #-----------------------------------------------------------------------------
 # Module Scripts
-
+def test_interpolate_data():
+    x_data = np.linspace(-6,6,1000)
+    signal = np.sin(x_data)+np.random.normal(scale=1,size=len(x_data))
+    plt.plot(x_data,signal,label="Original Data")
+    for interp_type in ["lowess","loess", "1d", "gpr","spline"]:
+        new_x = np.linspace(-2,2,1000)
+        interp_data = interpolate_data(x_data=x_data,y_data=signal,new_x_data=new_x,method=interp_type)
+        plt.plot(new_x,interp_data,label=interp_type)
+    plt.legend()
+    plt.show()
 #-----------------------------------------------------------------------------
 # Module Runner
 if __name__ == '__main__':
-    pass
+    test_interpolate_data()
