@@ -32,7 +32,7 @@ Issues = "https://github.com/sandersa/univariate-tools/issues"
 Source = "https://github.com/sandersa/univariate-tools"
 
 [tool.hatch.version]
-path = "univariate_tools/__about__.py"
+path = "univariate_tools/__init__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
