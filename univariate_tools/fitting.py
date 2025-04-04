@@ -464,7 +464,7 @@ class DataSimulator(object):
     def __call__(self,x_data):
         """Returns the simulated data for x=x_data, to have deterministic responses, set self.random_seed"""
         if type(x_data) not in [np.array]:
-            if isinstance(x_data, ListType):
+            if isinstance(x_data, list):
                 x_data=np.array(x_data)
             else:
                 x_data=np.array([x_data])
@@ -521,13 +521,7 @@ def test_gaussian():
     plt.plot(x_data,gaussian(alpha=1,x0=.1,delta=.1,x=x_data))
     plt.title("${0}$".format(gaussian.to_latex()))
     plt.show()
-# def test_gaussian_times_lorentzian():
-#     gaussian=FunctionalModel(parameters="alpha x0 delta",variables="x",equation="alpha*exp(-1*(x-x0)^2/(2*delta**2))")
-#     x_data=np.linspace(-1,1,1000)
-#     lorentzian = FunctionalModel(parameters = )
-#     plt.plot(x_data,gaussian(alpha=1,x0=.1,delta=.1,x=x_data))
-#     plt.title("${0}$".format(gaussian.to_latex()))
-#     plt.show()
+
 
 
 #-----------------------------------------------------------------------------
