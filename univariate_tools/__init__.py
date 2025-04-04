@@ -21,12 +21,12 @@ sys.path.append(os.path.join(os.path.dirname( __file__ ), '..'))
 # Module Constants
 VERBOSE_IMPORT = False
 TIMED_IMPORT = False
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 "Constant that determines if import statements are echoed to output"
 # The new module load scheme can be for module in DE_API_MODULES.keys()
 # -----------------------------------------------------------------------------
-DE_API_MODULES = {"univarate_tools.fitting":True,
-                  "univarate_tools.interpolation":True}
+DE_API_MODULES = {"univariate_tools.fitting":True,
+                  "univariate_tools.interpolation":True}
 "Dictionary that controls the definition of the API, this can be set to leave out any unwanted modules. Also it is" \
     "possible to discover all modules by DE_API_MODULES.keys()"
 
