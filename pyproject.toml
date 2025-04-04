@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["scipy","numpy","matplotlib","simpy","statsmodels","scikit-misc","scikit-learn","seaborn"]
+dependencies = ["scipy","numpy","matplotlib","sympy","statsmodels","scikit-misc","scikit-learn","seaborn"]
 
 [project.urls]
 Documentation = "https://github.com/sandersa/univariate-tools#readme"

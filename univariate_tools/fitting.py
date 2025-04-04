@@ -24,7 +24,7 @@ import sys
 import re
 #-----------------------------------------------------------------------------
 # Third Party Imports
-sys.path.append(os.path.join(os.path.dirname( __file__ ), '..','..'))
+sys.path.append(os.path.join(os.path.dirname( __file__ ), '..'))
 
 
 
@@ -126,7 +126,7 @@ class FunctionalModel(object):
         # fix any lists
         for item in ["parameters", "variables"]:
             if isinstance(self.options[item], str):
-                self.options[item] = re.split("\s+", self.options[item])
+                self.options[item] = re.split(r"\s+", self.options[item])
             self.__dict__[item] = self.options[item]
             self.options[item] = None
         self.special_function = self.options["special_function"]
@@ -507,9 +507,32 @@ def test_Multicosine():
     print("The mutlisine is {0}".format(multisine))
     print("The latex form is "+ multisine.to_latex())
 
+def test_line():
+    line=FunctionalModel(parameters=["m","b"],variables="x",equation="m*x+b")
+    line.set_parameters(m=3,b=1)
+    x_data=np.linspace(-10,10,1000)
+    plt.plot(x_data,line(x_data))
+    plt.title(str(line))
+    plt.show()
+
+def test_gaussian():
+    gaussian=FunctionalModel(parameters="alpha x0 delta",variables="x",equation="alpha*exp(-1*(x-x0)^2/(2*delta**2))")
+    x_data=np.linspace(-1,1,1000)
+    plt.plot(x_data,gaussian(alpha=1,x0=.1,delta=.1,x=x_data))
+    plt.title("${0}$".format(gaussian.to_latex()))
+    plt.show()
+# def test_gaussian_times_lorentzian():
+#     gaussian=FunctionalModel(parameters="alpha x0 delta",variables="x",equation="alpha*exp(-1*(x-x0)^2/(2*delta**2))")
+#     x_data=np.linspace(-1,1,1000)
+#     lorentzian = FunctionalModel(parameters = )
+#     plt.plot(x_data,gaussian(alpha=1,x0=.1,delta=.1,x=x_data))
+#     plt.title("${0}$".format(gaussian.to_latex()))
+#     plt.show()
 
 
 #-----------------------------------------------------------------------------
 # Module Runner
 if __name__ == '__main__':
-    test_Multicosine()
+    #test_Multicosine()
+    #test_line()
+    test_gaussian()
