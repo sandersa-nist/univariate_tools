@@ -20,6 +20,12 @@ FunctionalModel is a blend of [sympy](https://www.sympy.org/en/index.html) and [
 from univariate_tools import *
 # lets make a composite function
 line=FunctionalModel(parameters=["m","b"],variables="x",equation="m*x+b")
+gaussian=FunctionalModel(parameters="alpha x0 delta",variables="x",equation="alpha*exp(-1*(x-x0)^2/(2*delta**2))")
+gauss_line=line+gaussian
+x_data=np.linspace(-1,1,1000)
+plt.plot(x_data,gauss_line(alpha=1,x0=.1,delta=.1,m=1.2,b=.1,x=x_data))
+plt.title("${0}$".format(gauss_line.to_latex()))
+```
 
 # [Example](./examples/Fitting_Example.ipynb)
 ![image](./documentation/gauss_3d.png)
