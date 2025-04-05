@@ -320,14 +320,18 @@ class FunctionalModel(object):
             equation = sympy.diff(equation, respect_to)
         return FunctionalModel(parameters=self.parameters[:], variables=self.variables[:], equation=str(equation))
 
-    def integrate(self, respect_to=None, order=1):
+    def integrate(self, respect_to=None, order=1,limits = None):
         """Integrates with respect to variable or parameter provided or defaults to first variable.
         Does not add a constant of integration."""
         if respect_to is None:
             respect_to = self.variables[0]
         equation = self.equation.copy()
         for i in range(order):
-            equation = sympy.integrate(equation, respect_to)
+            if limits:
+                value = sympy.integrate(equation,(respect_to,limits[0],limits[1]))
+                return value
+            else:
+                equation = sympy.integrate(equation, sympy.symbols(respect_to))
         return FunctionalModel(parameters=self.parameters[:], variables=self.variables[:], equation=str(equation))
 
     def limit(self, variable_or_parameter, point):
@@ -343,7 +347,7 @@ class DataSimulator(object):
     and an optional output noise. The attribute self.x has the x data and self.data has the result. The simulator may be
     called as a function on a single point or an numpy array."""
     def __init__(self,**options):
-        """Intializes the DataSimulator class"""
+        """Initializes the DataSimulator class"""
         defaults= {"parameters":None,
                    "variables":None,
                    "equation":None,
