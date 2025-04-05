@@ -163,7 +163,7 @@ class FunctionalModel(object):
                                            modules=LAMBDIFY_MODULES)
 
     def clear_parameters(self):
-        """Clears the parmeters specified by set_parameters"""
+        """Clears the parameters specified by set_parameters"""
         self.function = sympy.lambdify(self.parameters + self.variables, self.equation, modules=LAMBDIFY_MODULES)
         self.parameter_values = {}
 
@@ -324,7 +324,7 @@ class FunctionalModel(object):
         """Integrates with respect to variable or parameter provided or defaults to first variable.
         Does not add a constant of integration."""
         if respect_to is None:
-            respect_to = self.variables_symbols[0]
+            respect_to = self.variables[0]
         equation = self.equation.copy()
         for i in range(order):
             equation = sympy.integrate(equation, respect_to)
