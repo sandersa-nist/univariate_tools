@@ -27,5 +27,5 @@ plt.plot(x_data,gauss_line(alpha=1,x0=.1,delta=.1,m=1.2,b=.1,x=x_data))
 plt.title("${0}$".format(gauss_line.to_latex()))
 ```
 
-# [Example](./examples/Example_univariate_tools.ipynb)
+# [Example](./examples/Example.ipynb)
 ![image](./documentation/gauss_3d.png)
