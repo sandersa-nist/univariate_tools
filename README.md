@@ -40,7 +40,10 @@ model.set_parameters({"a":1.25,"b":3,"c":-.4})
 ```python 
 x_data = np.linspace(-10,10,1000)
 y_data = model(x_data)
+plt.plot(x_data,y_data)
 ```
+![image](./documentation/data.png)
+
 ## Fitting Data
 1. To fit data, start with defining a FunctionalModel.There should be a set of parameters, one variable, and an equation. 
 ```python
@@ -48,11 +51,16 @@ model = FunctionalModel(parameters=["m","b"],variables="x",equation="m*x+b")
 ```
 2. Use model.fit_data, for more complex fits provide an initial guess 
 ```python
+x_data = np.linspace(-10,10,1000)
+y_data = 2.12*x_data+3.11
 model.fit_data(x_data = x_data,y_data = y_data,initial_guess = {"m":2,"b":3})
 ```
 3. The fit parameters are now in the parameter_values
 ```python
 model.parameter_values
+```
+```python
+{'m': 2.12, 'b': 3.11}
 ```
 ## Simulate Data
 1. Specify the parameters, variable, equation, noise characteristics, x_data
@@ -72,6 +80,8 @@ simulated_data = DataSimulator(**{"parameters":["m","b"],
 ```python
 plt.plot(simulated_data.x,simulated_data.data)
 ```
+![image](./documentation/data_simulator.png)
+
 ## Interpolate Data
 This is a resampling of a data stream to a new x set of points, the methods are lowess, loess, 1d, gpr and spline. Each one of these methods has a different set of options that can be passed with keywords
 ```python
