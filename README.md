@@ -13,7 +13,7 @@ pip install git+https://github.com/sandersa-nist/univariate_tools.git
 ```shell
 pip install <path to top folder>
 ```
-# use case
+# Use case
 Have you ever wanted to fit a really weird function of one variable? How about make a complicated synthetic time-domain signal? Have calibration data on an irregular grid and you need to interpolate? Then univariate_tools is for you!
 FunctionalModel is a blend of [sympy](https://www.sympy.org/en/index.html) and [numpy](https://numpy.org/doc/stable/) functionality that lets the user do all kinds of math with functions and then fit data. 
 ```python
@@ -139,6 +139,7 @@ plt.show()
 ![image](./documentation/reverse_regressor.png)
 
 # [Example](./examples/Example.ipynb)
+# [API Documentation](https://sandersa-nist.github.io/univariate_tools/documentation/univariate_tools.html) 
 
 # Contact
 Aric Sanders [aric.sanders@nist.gov](mailto:aric.sanders@nist.gov)
