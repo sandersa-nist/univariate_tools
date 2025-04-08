@@ -102,6 +102,8 @@ This is a resampling of a data stream to a new x set of points, the methods are 
     plt.show()
     
 ```
+![image](./documentation/interpolate_data.png)
+
 
 ## Reverse Regressor
 This is used when you have a monotonic function that represents a calibration and you have new y points. It has similar methods and options as the interpolate data function.
@@ -121,6 +123,8 @@ for interp_type in ["lowess","loess", "1d", "gpr","spline"]:
 plt.legend()
 plt.show() 
 ```
+![image](./documentation/reverse_regressor.png)
+
 # [Example](./examples/Example.ipynb)
 
 # Contact
