@@ -25,9 +25,10 @@ gauss_line=line+gaussian
 x_data=np.linspace(-1,1,1000)
 plt.plot(x_data,gauss_line(alpha=1,x0=.1,delta=.1,m=1.2,b=.1,x=x_data))
 plt.title("${0}$".format(gauss_line.to_latex()))
-![image](./documentation/gauss_line.png)
 
 ```
+![image](./documentation/gauss_line.png)
+
 # Workflow
 ## Calculating Data 
 1. To calculate a function, first create a FunctionalModel. There should be a set of parameters, one variable, and an equation. 
