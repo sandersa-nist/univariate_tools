@@ -1,6 +1,6 @@
 # univariate_tools
 Tools to fit, interpolate, and synthesize univariate data.
-![image](./documentation/gauss_3d.png)
+![image](./docs/gauss_3d.png)
 
 # Installation 
 ## Method 1 - Directly from Github
