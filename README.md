@@ -46,7 +46,7 @@ x_data = np.linspace(-10,10,1000)
 y_data = model(x_data)
 plt.plot(x_data,y_data)
 ```
-![image](./documentation/data.png)
+![image](./docs/data.png)
 
 ## Fitting Data
 1. To fit data, start with defining a FunctionalModel.There should be a set of parameters, one variable, and an equation. 
@@ -84,7 +84,7 @@ simulated_data = DataSimulator(**{"parameters":["m","b"],
 ```python
 plt.plot(simulated_data.x,simulated_data.data)
 ```
-![image](./documentation/data_simulator.png)
+![image](./docs/data_simulator.png)
 
 ## Interpolate Data
 This is a resampling of a data stream to a new x set of points, the methods are lowess, loess, 1d, gpr and spline. Each one of these methods has a different set of options that can be passed with keywords
@@ -116,7 +116,7 @@ This is a resampling of a data stream to a new x set of points, the methods are 
     plt.show()
     
 ```
-![image](./documentation/interpolate_data.png)
+![image](./docs/interpolate_data.png)
 
 
 ## Reverse Regressor
@@ -137,13 +137,13 @@ for interp_type in ["lowess","loess", "1d", "gpr","spline"]:
 plt.legend()
 plt.show() 
 ```
-![image](./documentation/reverse_regressor.png)
+![image](./docs/reverse_regressor.png)
 
 # Example
 An [example](./examples/Example.ipynb) of creating a functional model, fitting data, creating composite models and simulating data. 
 
 # API Documentation
-The [API Documentation](https://sandersa-nist.github.io/univariate_tools/documentation/univariate_tools.html) links to the __init__.py file and has the primary submodules linked. 
+The [API Documentation](https://sandersa-nist.github.io/univariate_tools) links to the __init__.py file and has the primary submodules linked. 
 
 # Contact
 Aric Sanders [aric.sanders@nist.gov](mailto:aric.sanders@nist.gov)
