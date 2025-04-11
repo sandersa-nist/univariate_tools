@@ -1,5 +1,6 @@
 # univariate_tools
 Tools to fit, interpolate, and synthesize univariate data.
+![image](./documentation/gauss_3d.png)
 
 # Installation 
 ## Method 1 - Directly from Github
@@ -138,8 +139,11 @@ plt.show()
 ```
 ![image](./documentation/reverse_regressor.png)
 
-# [Example](./examples/Example.ipynb)
-# [API Documentation](https://sandersa-nist.github.io/univariate_tools/documentation/univariate_tools.html) 
+# Example
+An [example](./examples/Example.ipynb) of creating a functional model, fitting data, creating composite models and simulating data. 
+
+# API Documentation
+The [API Documentation](https://sandersa-nist.github.io/univariate_tools/documentation/univariate_tools.html) links to the __init__.py file and has the primary submodules linked. 
 
 # Contact
 Aric Sanders [aric.sanders@nist.gov](mailto:aric.sanders@nist.gov)
@@ -148,4 +152,3 @@ Aric Sanders [aric.sanders@nist.gov](mailto:aric.sanders@nist.gov)
 # NIST Disclaimer
 Certain commercial equipment, instruments, or materials (or suppliers, or software, ...) are identified in this repository to foster understanding. Such identification does not imply recommendation or endorsement by the National Institute of Standards and Technology, nor does it imply that the materials or equipment identified are necessarily the best available for the purpose.
 
-![image](./documentation/gauss_3d.png)
